@@ -57,24 +57,7 @@ public:
         Matrix<T, rows, N> product(products);
         return product;
     }
-
-    /*template<unsigned int N>
-    const friend Matrix<T, rows, N> operator * (const Matrix<T, rows, columns> &lhs, const Matrix<T, columns, N> &rhs){
-        if(lhs.ncols != rhs.nrows){
-            std::cout << "error, rows != cols, multiplication impossible" << std::endl;
-        }
-        std::array<T, rows * N> products = {};
-        for(int i = 0; i < lhs.nrows; i++){
-            for(int j = 0; j < rhs.ncols; j++){
-                for(int k = 0; k < lhs.ncols; k++){
-                    products[i*N + j] += lhs[i][k] * rhs[k][j];
-                }
-            }
-        }
-        Matrix<T, rows, N> product(products);
-        return product;
-    }*/
-
+    
     const friend Matrix<T, rows, columns> operator +(const Matrix<T, rows, columns> &lhs, const Matrix<T, rows, columns> &rhs){
         std::array<T, rows * columns> result;
         for(int i = 0; i < rows; i++){
