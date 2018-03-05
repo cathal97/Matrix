@@ -57,7 +57,11 @@ public:
         Matrix<T, rows, N> product(products);
         return product;
     }
-    
+
+    const Matrix<T, columns, rows> transpose(){
+    	
+    }
+
     const friend Matrix<T, rows, columns> operator +(const Matrix<T, rows, columns> &lhs, const Matrix<T, rows, columns> &rhs){
         std::array<T, rows * columns> result;
         for(int i = 0; i < rows; i++){
